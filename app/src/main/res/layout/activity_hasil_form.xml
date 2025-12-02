@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="𝑯𝑨𝑺𝑰𝑳 𝑷𝑬𝑵𝑫𝑨𝑭𝑻𝑨𝑹𝑨𝑵"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama: "
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alamat: "
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvNoHP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No HP: "
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvAgama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agama: "
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvJenisKelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jenis Kelamin: "
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/tvHobi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hobi: "
+            android:textStyle="italic"
+            android:textSize="25sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnKembali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kembali"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:padding="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

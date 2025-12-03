@@ -17,46 +17,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NURLANAAGUSTIN">
-
-
+        <activity
+            android:name=".ExitActivity"
+            android:exported="false" />
         <activity
             android:name=".CardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".KonversiSuhuActivity"
             android:exported="false" />
-
         <activity
             android:name=".ProfileActivity"
-            android:exported="false"/>
-
+            android:exported="false" />
         <activity
             android:name=".FormTransaksiActivity"
             android:exported="false" />
-
         <activity
             android:name=".NotaTransaksiActivity"
             android:exported="false"
             android:parentActivityName=".FormTransaksiActivity" />
-
         <activity
             android:name=".CalculatorActivity"
             android:exported="false" />
-
         <activity
             android:name=".HasilFormActivity"
             android:exported="false" />
-
         <activity
             android:name=".FormActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />

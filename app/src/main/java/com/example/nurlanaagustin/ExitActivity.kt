@@ -13,40 +13,41 @@ import androidx.core.view.WindowInsetsCompat
  */
 class ExitActivity : AppCompatActivity() {
 
-    private val TAG = "ExitActivityLifecycle"
+    companion object {
+        private const val TAG = "ExitActivityLifecycle"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Pengaturan dasar Activity dari kode yang Anda berikan
+        // Pengaturan dasar Activity
         enableEdgeToEdge()
-        setContentView(R.layout.activity_exit) // Asumsi nama file XML adalah activity_exit.xml
+        setContentView(R.layout.activity_exit)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        // Setup window insets dengan null-safety
+        findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.main)?.let { mainView ->
+            ViewCompat.setOnApplyWindowInsetsListener(mainView) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+            }
         }
 
-        // --- LOGIKA TOMBOL KELUAR DITAMBAHKAN DI SINI ---
+        // Setup tombol keluar
+        setupExitButton()
+    }
 
-        // 1. Dapatkan referensi ke tombol "Keluar"
-        //    Asumsi: Tombol di activity_exit.xml memiliki ID 'exitButton'
-        try {
-            // Ganti 'R.id.exitButton' jika ID tombol Anda berbeda di 'activity_exit.xml'
-            val exitButton: Button = findViewById(R.id.exitButton)
+    private fun setupExitButton() {
+        // Cari tombol dengan ID exitButton
+        val exitButton: Button? = findViewById(R.id.exitButton)
 
-            // 2. Tetapkan fungsi klik
+        if (exitButton != null) {
             exitButton.setOnClickListener {
-                Log.i(TAG, "Tombol 'Keluar' dari ExitActivity diklik. Menutup Activity.")
-
-                // Perintah untuk menutup Activity ini
+                Log.i(TAG, "Tombol 'Keluar' diklik. Menutup Activity.")
                 finish()
             }
-        } catch (e: Exception) {
-            // Pesan error jika tombol tidak ditemukan di layout
-            Log.e(TAG, "Gagal menemukan tombol 'exitButton' di activity_exit.xml: ${e.message}")
+        } else {
+            Log.e(TAG, "Tombol 'exitButton' tidak ditemukan di layout activity_exit.xml")
         }
-        // ------------------------------------------------
     }
 }
